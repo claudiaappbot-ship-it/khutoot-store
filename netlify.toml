@@ -4,7 +4,7 @@ publish = ".next/standalone"
 
 [build.environment]
 NODE_VERSION = "20"
-NPM_VERSION = "18"
+NPM_VERSION = "10"
 
 [[headers]]
 for = "/_next/static/*"
