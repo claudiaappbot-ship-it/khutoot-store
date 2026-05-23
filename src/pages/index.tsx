@@ -1,41 +1,34 @@
 import Head from 'next/head';
-import { motion } from 'framer-motion';
-import HeroSection from '@/components/sections/HeroSection';
-import FeaturedCategories from '@/components/sections/FeaturedCategories';
-import BestSellers from '@/components/sections/BestSellers';
-import CustomerShowcase from '@/components/sections/CustomerShowcase';
-import HowItWorks from '@/components/sections/HowItWorks';
-import NewsletterSignup from '@/components/sections/NewsletterSignup';
-import { useLanguage } from '@/context/LanguageContext';
+import HeroSection from '@/components/HeroSection';
+import FeaturedCollections from '@/components/FeaturedCollections';
+import EditorialStory from '@/components/EditorialStory';
+import BestSellers from '@/components/BestSellers';
+import HowItWorks from '@/components/HowItWorks';
+import CustomerSpaces from '@/components/CustomerSpaces';
+import CustomOrdersCTA from '@/components/CustomOrdersCTA';
+import NewsletterSection from '@/components/NewsletterSection';
 
 export default function Home() {
-  const { t, isArabic } = useLanguage();
-
   return (
     <>
       <Head>
-        <title>{isArabic ? 'خطوط المدينة - متجر فني سعودي' : 'Urban Lines - Saudi Digital Art Store'}</title>
-        <meta
-          name="description"
-          content={isArabic
-            ? 'متجر متخصص في بيع التصاميم الفنية والخرائط السعودية والمخططات الحصرية'
-            : 'Premium digital art and Saudi maps store - blueprints, architecture, and landmark prints'
-          }
-        />
-        <meta name="keywords" content={isArabic
-          ? 'مخططات سيارات, خرائط الرياض, لوحات هندسية, ديكور سعودي'
-          : 'blueprint art Saudi, Riyadh maps, digital art, premium prints'
-        } />
-        <link rel="canonical" href="https://urbanlines.sa/" />
+        <title>Khutoot Studio - Designed for spaces with character</title>
+        <meta name="description" content="Premium architectural art and curated designs for contemporary Saudi spaces. Khutoot Studio creates collectible framed artwork for modern interiors." />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Khutoot Studio" />
+        <meta property="og:description" content="Premium architectural art and curated designs for contemporary Saudi spaces" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
 
-      <main className="w-full">
+      <main className="bg-bg-primary">
         <HeroSection />
-        <FeaturedCategories />
+        <FeaturedCollections />
+        <EditorialStory />
         <BestSellers />
-        <CustomerShowcase />
         <HowItWorks />
-        <NewsletterSignup />
+        <CustomerSpaces />
+        <CustomOrdersCTA />
+        <NewsletterSection />
       </main>
     </>
   );

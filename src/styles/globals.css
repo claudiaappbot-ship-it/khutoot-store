@@ -1,5 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -16,15 +16,17 @@ html {
 }
 
 body {
-  font-family: 'IBM Plex Sans Arabic', 'Cairo', system-ui, sans-serif;
-  color: #1a1a1a;
-  background-color: #ffffff;
+  font-family: 'Inter', 'IBM Plex Sans Arabic', system-ui, sans-serif;
+  color: #111111;
+  background-color: #F5F3EE;
   line-height: 1.6;
+  letter-spacing: -0.3px;
 }
 
 html[dir='rtl'] body {
   direction: rtl;
   text-align: right;
+  font-family: 'IBM Plex Sans Arabic', 'Inter', system-ui, sans-serif;
 }
 
 html[dir='ltr'] body {
@@ -32,95 +34,118 @@ html[dir='ltr'] body {
   text-align: left;
 }
 
-/* Custom scrollbar */
+/* Custom scrollbar - minimal premium style */
 ::-webkit-scrollbar {
   width: 8px;
   height: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #f1f1f1;
+  background: #F5F3EE;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #888;
-  border-radius: 4px;
+  background: #C8B6A6;
+  border-radius: 0;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #555;
+  background: #8B7D6B;
+}
+
+html.dark ::-webkit-scrollbar-track {
+  background: #1A1A1A;
+}
+
+html.dark ::-webkit-scrollbar-thumb {
+  background: #6B705C;
+}
+
+html.dark ::-webkit-scrollbar-thumb:hover {
+  background: #8B7D6B;
 }
 
 /* Selection color */
 ::selection {
-  background-color: #000000;
-  color: #ffffff;
+  background-color: #111111;
+  color: #F5F3EE;
 }
 
 ::-moz-selection {
-  background-color: #000000;
-  color: #ffffff;
+  background-color: #111111;
+  color: #F5F3EE;
 }
 
 /* Smooth transitions */
 a, button, input, select, textarea {
-  transition: all 0.3s ease-out;
+  transition: all 0.2s ease-out;
 }
 
-/* Hero section specific styles */
-.hero-text {
-  @apply text-white drop-shadow-lg;
-}
-
-.hero-overlay {
-  background: linear-gradient(135deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.2));
-}
-
-/* Product card styles */
-.product-card {
-  @apply bg-white rounded-lg overflow-hidden border border-gray-100 hover:shadow-hover transition-all duration-300;
-}
-
-.product-card:hover {
-  @apply -translate-y-1;
-}
-
-/* Button styles */
+/* Premium button styles - sharp edges, no radius */
 .btn-primary {
-  @apply px-6 py-3 bg-primary-text text-white rounded-lg font-medium hover:shadow-hover transition-all duration-300;
+  @apply px-14 py-4 bg-text-primary text-bg-primary font-medium text-sm tracking-wide hover:bg-accent-hover transition-all duration-200;
+  border-radius: 0;
+}
+
+.btn-primary:hover {
+  @apply shadow-card;
 }
 
 .btn-primary:active {
-  @apply scale-95;
+  transform: scale(0.98);
 }
 
 .btn-secondary {
-  @apply px-6 py-3 bg-white text-primary-text border border-primary-text rounded-lg font-medium hover:bg-primary-light transition-all duration-300;
+  @apply px-14 py-4 bg-transparent text-text-primary border border-text-primary font-medium text-sm tracking-wide hover:bg-bg-primary hover:border-accent-hover hover:text-accent-hover transition-all duration-200;
+  border-radius: 0;
 }
 
-/* Glass morphism effect */
-.glass-effect {
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+.btn-accent {
+  @apply px-14 py-4 bg-accent-taupe text-text-light font-medium text-sm tracking-wide transition-all duration-200;
+  border-radius: 0;
+}
+
+.btn-accent:hover {
+  @apply bg-accent-hover;
+}
+
+/* Premium card styles - minimal borders, sharp edges */
+.card {
+  @apply bg-bg-primary border border-border-light transition-all duration-200;
+  border-radius: 0;
+}
+
+.card:hover {
+  @apply border-text-secondary;
+}
+
+.product-card {
+  @apply bg-bg-primary border border-border-light overflow-hidden transition-all duration-200;
+  border-radius: 0;
+}
+
+.product-card:hover {
+  @apply border-text-primary shadow-subtle;
 }
 
 /* Dark mode */
 html.dark body {
-  background-color: #0f0f0f;
-  color: #e8e8e8;
+  background-color: #1A1A1A;
+  color: #F5F3EE;
 }
 
+html.dark .card,
 html.dark .product-card {
-  @apply bg-primary-dark border-gray-800;
+  @apply bg-text-primary border-accent-secondary;
+}
+
+html.dark .card:hover,
+html.dark .product-card:hover {
+  @apply border-accent-taupe;
 }
 
 html.dark .btn-secondary {
-  @apply bg-primary-dark text-primary-text-light border-gray-700;
-}
-
-html.dark .glass-effect {
-  background: rgba(15, 15, 15, 0.95);
+  @apply text-text-light border-text-light hover:bg-text-secondary;
 }
 
 /* Utility classes */
@@ -128,87 +153,133 @@ html.dark .glass-effect {
   @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
 }
 
+.container-sm {
+  @apply max-w-4xl mx-auto px-4 sm:px-6 lg:px-8;
+}
+
 .section-padding {
   @apply py-16 sm:py-24;
 }
 
-.text-gradient {
-  @apply bg-gradient-to-r from-primary-text to-primary-gold bg-clip-text text-transparent;
+.section-padding-large {
+  @apply py-24 sm:py-32 lg:py-48;
+}
+
+/* Typography hierarchy */
+h1 {
+  @apply text-5xl sm:text-6xl font-bold tracking-tight;
+}
+
+h2 {
+  @apply text-4xl sm:text-5xl font-bold tracking-tight;
+}
+
+h3 {
+  @apply text-3xl font-bold tracking-tight;
+}
+
+h4 {
+  @apply text-2xl font-semibold;
+}
+
+h5 {
+  @apply text-xl font-semibold;
+}
+
+h6 {
+  @apply text-lg font-semibold;
+}
+
+html[dir='rtl'] h1,
+html[dir='rtl'] h2,
+html[dir='rtl'] h3 {
+  font-family: 'IBM Plex Sans Arabic', system-ui, sans-serif;
+  font-weight: 700;
+}
+
+/* Premium text styles */
+.text-primary {
+  @apply text-text-primary;
+}
+
+.text-secondary {
+  @apply text-text-secondary;
+}
+
+.text-accent {
+  @apply text-accent-taupe;
 }
 
 /* Loading skeleton */
 .skeleton {
-  @apply animate-pulse bg-gray-200 rounded;
+  @apply animate-pulse bg-border-light;
+  border-radius: 0;
 }
 
 html.dark .skeleton {
-  @apply bg-gray-700;
+  @apply bg-accent-secondary;
 }
 
-/* Fade in animation */
-.fade-in {
-  animation: fadeIn 0.5s ease-out;
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-/* Slide up animation */
-.slide-up {
-  animation: slideUp 0.5s ease-out;
-}
-
-@keyframes slideUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* Arabic text sizing adjustment */
-html[lang='ar'] body {
-  font-size: 15px;
-}
-
-html[lang='ar'] h1 {
-  font-weight: 700;
-}
-
-html[lang='ar'] h2 {
-  font-weight: 700;
-}
-
-html[lang='ar'] h3 {
-  font-weight: 700;
-}
-
-/* Form focus states */
+/* Form focus states - sharp borders */
 input:focus, textarea:focus, select:focus {
   outline: none;
-  border-color: #000000;
-  box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.1);
+  border-color: #111111;
+  box-shadow: none;
+  transition: border-color 0.2s ease-out;
 }
 
 html.dark input:focus, html.dark textarea:focus, html.dark select:focus {
-  border-color: #d4af37;
-  box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.1);
+  border-color: #C8B6A6;
+  box-shadow: none;
+}
+
+/* Form inputs - premium style */
+input, textarea, select {
+  @apply bg-bg-primary border border-border-light text-text-primary;
+  border-radius: 0;
+}
+
+input::placeholder {
+  @apply text-text-secondary;
+}
+
+html.dark input,
+html.dark textarea,
+html.dark select {
+  @apply bg-text-primary border-accent-secondary text-bg-primary;
+}
+
+html.dark input::placeholder {
+  @apply text-accent-taupe;
 }
 
 /* Link styles */
 a {
-  @apply text-primary-text hover:text-primary-gold;
+  @apply text-text-primary hover:text-accent-taupe transition-colors duration-200;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
 }
 
 html.dark a {
-  @apply text-primary-text-light hover:text-primary-gold;
+  @apply text-text-light hover:text-accent-taupe;
+}
+
+/* Premium architectural visual element */
+.divider {
+  @apply h-px bg-border-light;
+}
+
+.divider-accent {
+  @apply h-px bg-accent-taupe;
+}
+
+html.dark .divider {
+  @apply bg-accent-secondary;
+}
+
+html.dark .divider-accent {
+  @apply bg-accent-taupe;
 }

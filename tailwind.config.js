@@ -9,6 +9,24 @@ module.exports = {
   theme: {
     extend: {
       colors: {
+        // Premium Khutoot Studio color system
+        bg: {
+          primary: '#F5F3EE',
+          dark: '#1A1A1A',
+        },
+        text: {
+          primary: '#111111',
+          secondary: '#6E6E6E',
+          light: '#FFFFFF',
+        },
+        border: {
+          light: '#DDD7CF',
+        },
+        accent: {
+          taupe: '#C8B6A6',
+          secondary: '#6B705C',
+          hover: '#8B7D6B',
+        },
         primary: {
           black: '#000000',
           white: '#FFFFFF',
@@ -33,9 +51,9 @@ module.exports = {
         },
       },
       fontFamily: {
-        'arabic': ['IBM Plex Sans Arabic', 'Cairo', 'system-ui', 'sans-serif'],
+        'sans': ['Inter', 'system-ui', 'sans-serif'],
+        'arabic': ['IBM Plex Sans Arabic', 'system-ui', 'sans-serif'],
         'cairo': ['Cairo', 'system-ui', 'sans-serif'],
-        'din': ['DIN Next Arabic', 'system-ui', 'sans-serif'],
       },
       fontSize: {
         xs: ['12px', { lineHeight: '16px' }],
@@ -63,12 +81,14 @@ module.exports = {
         96: '96px',
       },
       boxShadow: {
+        none: 'none',
         subtle: '0 4px 12px rgba(0, 0, 0, 0.08)',
         card: '0 8px 16px rgba(0, 0, 0, 0.1)',
         hover: '0 12px 24px rgba(0, 0, 0, 0.12)',
         luxury: '0 20px 40px rgba(0, 0, 0, 0.15)',
       },
       borderRadius: {
+        'none': '0',
         xs: '2px',
         sm: '4px',
         md: '8px',
@@ -76,29 +96,27 @@ module.exports = {
         xl: '16px',
       },
       transitionDuration: {
+        200: '200ms',
         300: '300ms',
         400: '400ms',
-      },
-      backgroundImage: {
-        'gradient-subtle': 'linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(0, 0, 0, 0.05))',
-        'gradient-gold': 'linear-gradient(135deg, #D4AF37, #E8C547)',
       },
       keyframes: {
         fadeIn: {
           '0%': { opacity: '0' },
           '100%': { opacity: '1' },
         },
+        slideUp: {
+          '0%': { transform: 'translateY(20px)', opacity: '0' },
+          '100%': { transform: 'translateY(0)', opacity: '1' },
+        },
         slideIn: {
           '0%': { transform: 'translateY(10px)', opacity: '0' },
           '100%': { transform: 'translateY(0)', opacity: '1' },
         },
-        pulse: {
-          '0%, 100%': { opacity: '1' },
-          '50%': { opacity: '0.7' },
-        },
       },
       animation: {
         'fade-in': 'fadeIn 0.3s ease-out',
+        'slide-up': 'slideUp 0.5s ease-out',
         'slide-in': 'slideIn 0.3s ease-out',
       },
     },
