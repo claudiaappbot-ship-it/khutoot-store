@@ -1,0 +1,214 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'IBM Plex Sans Arabic', 'Cairo', system-ui, sans-serif;
+  color: #1a1a1a;
+  background-color: #ffffff;
+  line-height: 1.6;
+}
+
+html[dir='rtl'] body {
+  direction: rtl;
+  text-align: right;
+}
+
+html[dir='ltr'] body {
+  direction: ltr;
+  text-align: left;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* Selection color */
+::selection {
+  background-color: #000000;
+  color: #ffffff;
+}
+
+::-moz-selection {
+  background-color: #000000;
+  color: #ffffff;
+}
+
+/* Smooth transitions */
+a, button, input, select, textarea {
+  transition: all 0.3s ease-out;
+}
+
+/* Hero section specific styles */
+.hero-text {
+  @apply text-white drop-shadow-lg;
+}
+
+.hero-overlay {
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.2));
+}
+
+/* Product card styles */
+.product-card {
+  @apply bg-white rounded-lg overflow-hidden border border-gray-100 hover:shadow-hover transition-all duration-300;
+}
+
+.product-card:hover {
+  @apply -translate-y-1;
+}
+
+/* Button styles */
+.btn-primary {
+  @apply px-6 py-3 bg-primary-text text-white rounded-lg font-medium hover:shadow-hover transition-all duration-300;
+}
+
+.btn-primary:active {
+  @apply scale-95;
+}
+
+.btn-secondary {
+  @apply px-6 py-3 bg-white text-primary-text border border-primary-text rounded-lg font-medium hover:bg-primary-light transition-all duration-300;
+}
+
+/* Glass morphism effect */
+.glass-effect {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Dark mode */
+html.dark body {
+  background-color: #0f0f0f;
+  color: #e8e8e8;
+}
+
+html.dark .product-card {
+  @apply bg-primary-dark border-gray-800;
+}
+
+html.dark .btn-secondary {
+  @apply bg-primary-dark text-primary-text-light border-gray-700;
+}
+
+html.dark .glass-effect {
+  background: rgba(15, 15, 15, 0.95);
+}
+
+/* Utility classes */
+.container-max {
+  @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+}
+
+.section-padding {
+  @apply py-16 sm:py-24;
+}
+
+.text-gradient {
+  @apply bg-gradient-to-r from-primary-text to-primary-gold bg-clip-text text-transparent;
+}
+
+/* Loading skeleton */
+.skeleton {
+  @apply animate-pulse bg-gray-200 rounded;
+}
+
+html.dark .skeleton {
+  @apply bg-gray-700;
+}
+
+/* Fade in animation */
+.fade-in {
+  animation: fadeIn 0.5s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Slide up animation */
+.slide-up {
+  animation: slideUp 0.5s ease-out;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Arabic text sizing adjustment */
+html[lang='ar'] body {
+  font-size: 15px;
+}
+
+html[lang='ar'] h1 {
+  font-weight: 700;
+}
+
+html[lang='ar'] h2 {
+  font-weight: 700;
+}
+
+html[lang='ar'] h3 {
+  font-weight: 700;
+}
+
+/* Form focus states */
+input:focus, textarea:focus, select:focus {
+  outline: none;
+  border-color: #000000;
+  box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.1);
+}
+
+html.dark input:focus, html.dark textarea:focus, html.dark select:focus {
+  border-color: #d4af37;
+  box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.1);
+}
+
+/* Link styles */
+a {
+  @apply text-primary-text hover:text-primary-gold;
+}
+
+html.dark a {
+  @apply text-primary-text-light hover:text-primary-gold;
+}
