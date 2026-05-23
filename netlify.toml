@@ -1,14 +1,10 @@
 [build]
   command = "npm run build"
-  publish = ".next"
+  publish = "out"
 
 [build.environment]
   NODE_VERSION = "20"
   NPM_VERSION = "10"
-  NEXT_PRIVATE_TARGET = "export"
-
-[[plugins]]
-  package = "@netlify/plugin-nextjs"
 
 # Cache static assets aggressively
 [[headers]]

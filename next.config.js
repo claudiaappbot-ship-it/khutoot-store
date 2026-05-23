@@ -2,15 +2,11 @@
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
-    output: 'standalone',
+  output: 'export',
   images: {
-    unoptimized: false,
+    unoptimized: true,
     formats: ['image/webp', 'image/avif'],
     domains: ['images.unsplash.com', 'res.cloudinary.com', 'khutoot.store', 'www.khutoot.store'],
-  },
-  i18n: {
-    locales: ['ar', 'en'],
-    defaultLocale: 'ar',
   },
   headers: async () => {
     return [
