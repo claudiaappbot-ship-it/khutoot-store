@@ -6,11 +6,6 @@
       NODE_VERSION = "20"
         NPM_VERSION = "10"
 
-        [[redirects]]
-          from = "/*"
-            to = "/index.html"
-              status = 200
-
               [[headers]]
                 for = "/_next/static/*"
                   [headers.values]
