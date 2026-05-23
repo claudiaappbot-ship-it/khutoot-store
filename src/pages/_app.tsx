@@ -7,18 +7,20 @@ import Layout from '@/components/Layout';
 import { LanguageProvider } from '@/context/LanguageContext';
 
 export default function App({ Component, pageProps }: AppProps) {
-  const router = useRouter();
   const [mounted, setMounted] = useState(false);
+  const [isArabic, setIsArabic] = useState(false);
 
   useEffect(() => {
     setMounted(true);
+    const stored = localStorage.getItem('language');
+    setIsArabic(stored === 'en' ? false : true);
   }, []);
 
   if (!mounted) {
     return null;
   }
 
-  const isRTL = router.locale === 'ar';
+  const isRTL = isArabic;
 
   return (
     <>
@@ -26,8 +28,8 @@ export default function App({ Component, pageProps }: AppProps) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="description" content="خطوط المدينة - متجر فني ديجيتالي سعودي متخصص بالمخططات والخرائط" />
         <meta property="og:type" content="website" />
-        <meta property="og:locale" content={router.locale} />
-        <html dir={isRTL ? 'rtl' : 'ltr'} lang={router.locale} />
+        <meta property="og:locale" content={isArabic ? 'ar' : 'en'} />
+        <html dir={isRTL ? 'rtl' : 'ltr'} lang={isArabic ? 'ar' : 'en'} />
       </Head>
 
       <LanguageProvider>

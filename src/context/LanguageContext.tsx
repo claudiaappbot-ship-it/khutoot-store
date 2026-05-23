@@ -83,14 +83,12 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
   useEffect(() => {
     setMounted(true);
     const stored = localStorage.getItem('language') as 'ar' | 'en' | null;
-    const locale = (router.locale as 'ar' | 'en') || 'ar';
-    setLanguageState(stored || locale || 'ar');
-  }, [router.locale]);
+    setLanguageState(stored || 'ar');
+  }, []);
 
   const setLanguage = (lang: 'ar' | 'en') => {
     setLanguageState(lang);
     localStorage.setItem('language', lang);
-    router.push(router.pathname, router.asPath, { locale: lang });
   };
 
   const t = (key: string): string => {
