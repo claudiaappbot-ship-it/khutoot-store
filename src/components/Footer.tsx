@@ -42,8 +42,8 @@ export default function Footer() {
             </h3>
             <p className="text-sm text-bg-primary opacity-75 leading-relaxed">
               {isArabic
-                ? 'استوديو فني متخصص في التصاميم المعمارية والخرائط السعودية.'
-                : 'An art studio specializing in architectural designs and Saudi maps.'}
+                ? 'استوديو تصميم مكرس لاحتفاء الثقافة والهوية السعودية من خلال فنون وتصاميم متنوعة.'
+                : 'A design studio celebrating Saudi culture and identity through diverse arts and designs.'}
             </p>
           </div>
 

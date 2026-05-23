@@ -13,44 +13,44 @@ interface Collection {
 
 const collections: Collection[] = [
   {
-    id: 'vehicles',
-    title: { ar: 'مخططات المركبات', en: 'Vehicle Blueprints' },
+    id: 'calligraphy',
+    title: { ar: 'الخط العربي', en: 'Arabic Calligraphy' },
     description: {
-      ar: 'تصاميم معمارية دقيقة لأشهر المركبات، تحول الشغف الحقيقي إلى قطعة فنية.',
-      en: 'Architectural precision designs of iconic vehicles, transforming passion into art.',
+      ar: 'تصاميم مستوحاة من الخط العربي التقليدي والحديث. كل قطعة تمزج بين الفن والكلمة بأناقة.',
+      en: 'Designs inspired by traditional and modern Arabic calligraphy. Each piece blends art and language with elegance.',
     },
-    href: '/collections/vehicle-blueprints',
-    image: '/collections/vehicles.jpg',
+    href: '/collections',
+    image: '/collections/calligraphy.jpg',
   },
   {
-    id: 'maps',
-    title: { ar: 'خرائط المدن السعودية', en: 'Saudi City Maps' },
+    id: 'geometric-patterns',
+    title: { ar: 'الأنماط الهندسية', en: 'Geometric Patterns' },
     description: {
-      ar: 'خرائط فنية لأشهر المدن السعودية، تجسيد حب الوطن في ديكورك.',
-      en: 'Artistic maps of iconic Saudi cities, capturing national pride in your space.',
+      ar: 'أنماط هندسية معاصرة مستوحاة من الفن الإسلامي التقليدي. تصاميم عصرية تحافظ على التراث.',
+      en: 'Contemporary geometric patterns inspired by traditional Islamic art. Modern designs that honor heritage.',
     },
-    href: '/collections/city-maps',
-    image: '/collections/maps.jpg',
+    href: '/collections',
+    image: '/collections/geometric.jpg',
   },
   {
-    id: 'landmarks',
-    title: { ar: 'فن المعالم', en: 'Landmark Art' },
+    id: 'cultural-symbols',
+    title: { ar: 'الرموز الثقافية', en: 'Cultural Symbols' },
     description: {
-      ar: 'تصاميم حديثة للمعالم السعودية الشهيرة، تاريخ وحداثة في إطار واحد.',
-      en: 'Contemporary designs of Saudi landmarks, bridging history and modernity.',
+      ar: 'احتفاء بالرموز والعناصر الثقافية السعودية - القهوة العربية، الخيل، الصقور، والعادات الأصيلة.',
+      en: 'Celebrating Saudi cultural symbols - Arabic coffee, horses, falcons, and authentic traditions.',
     },
-    href: '/collections/landmarks',
-    image: '/collections/landmarks.jpg',
+    href: '/collections',
+    image: '/collections/cultural.jpg',
   },
   {
-    id: 'typography',
-    title: { ar: 'فن الخطوط العربية', en: 'Arabic Typography' },
+    id: 'contemporary-art',
+    title: { ar: 'الفن المعاصر', en: 'Contemporary Art' },
     description: {
-      ar: 'تصاميم خطية عربية معاصرة، إعادة تعريف الجمال في الكتابة.',
-      en: 'Contemporary Arabic typography designs, redefining written beauty.',
+      ar: 'تصاميم معاصرة جريئة تعكس روح العصر مع احترام التراث. فن حديث بهوية سعودية.',
+      en: 'Bold contemporary designs reflecting modern spirit while honoring heritage. Modern art with Saudi identity.',
     },
-    href: '/collections/arabic-typography',
-    image: '/collections/typography.jpg',
+    href: '/collections',
+    image: '/collections/contemporary.jpg',
   },
 ];
 
