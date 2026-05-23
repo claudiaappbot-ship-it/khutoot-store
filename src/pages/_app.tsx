@@ -7,18 +7,12 @@ import Layout from '@/components/Layout';
 import { LanguageProvider } from '@/context/LanguageContext';
 
 export default function App({ Component, pageProps }: AppProps) {
-  const [mounted, setMounted] = useState(false);
   const [isArabic, setIsArabic] = useState(false);
 
   useEffect(() => {
-    setMounted(true);
     const stored = localStorage.getItem('language');
     setIsArabic(stored === 'en' ? false : true);
   }, []);
-
-  if (!mounted) {
-    return null;
-  }
 
   const isRTL = isArabic;
 
