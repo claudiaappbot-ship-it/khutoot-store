@@ -23,7 +23,6 @@ export default function App({ Component, pageProps }: AppProps) {
         <meta name="description" content="خطوط المدينة - متجر فني ديجيتالي سعودي متخصص بالمخططات والخرائط" />
         <meta property="og:type" content="website" />
         <meta property="og:locale" content={isArabic ? 'ar' : 'en'} />
-        <html dir={isRTL ? 'rtl' : 'ltr'} lang={isArabic ? 'ar' : 'en'} />
       </Head>
 
       <LanguageProvider>
